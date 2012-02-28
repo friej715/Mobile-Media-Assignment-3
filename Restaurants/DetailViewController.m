@@ -61,7 +61,11 @@
     review4.numberOfUnhelpfulReviews = 5;
     
     restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
-
+    
+    for (Review* review in [restaurant reviews]) {
+        NSLog(@"Review Text: %@", review.text);
+    }
+    
     helpfulReviewLabel.text = [review1 text];
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review -- %i out of %i found this helpful.", [review1 numberOfHelpfulReviews], [review1 numberOfUnhelpfulReviews] + [review1 numberOfHelpfulReviews]];
     

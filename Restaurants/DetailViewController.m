@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    restaurant = [[Restaurant alloc] init];
+    restaurant = [[Restaurant alloc] init]; // new restaurant object
     
     restaurant.name = @"Pio Pio";
     restaurant.address = @"746 First Avenue\nNew York, NY 10128";
@@ -62,11 +62,25 @@
     
     restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     
+    
+ //fast enumeration--looks like it figures out how many there are in the first place
     for (Review* review in [restaurant reviews]) {
         NSLog(@"Review Text: %@", review.text);
     }
+
     
-    helpfulReviewLabel.text = [review1 text];
+    
+// older, for-loop way of doing it
+//    NSArray* reviews = [restaurant reviews];
+//    for (int i = 0; i < [reviews count]; i++) {
+//        Review* review = [reviews objectAtIndex:i];
+//        NSLog(@"Review Text: %@", review.text);
+//    }
+    
+    [restaurant mostHelpfulReview];
+    helpfulReviewLabel.text = [restaurant.bestReview text];
+    NSLog(@"Best Review Text: %@", restaurant.bestReview.text);
+    
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review -- %i out of %i found this helpful.", [review1 numberOfHelpfulReviews], [review1 numberOfUnhelpfulReviews] + [review1 numberOfHelpfulReviews]];
     
     

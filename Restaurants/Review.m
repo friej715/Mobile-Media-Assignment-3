@@ -12,4 +12,9 @@
 
 @synthesize reviewer, text, score, numberOfHelpfulReviews, numberOfUnhelpfulReviews;
 
+-(float) ratio
+{
+    return (numberOfHelpfulReviews / (numberOfHelpfulReviews+numberOfUnhelpfulReviews));
+}
+
 @end

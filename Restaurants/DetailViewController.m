@@ -81,7 +81,6 @@
     
     helpfulReviewLabel.text = [restaurant.bestReview text];
     NSLog(@"Best Review Text: %@", restaurant.bestReview.text);
-    NSLog(@"Average Rating: %f", [restaurant averageCustomerReview]);
     
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review -- %i out of %i found this helpful.", [restaurant.bestReview numberOfHelpfulReviews], [restaurant.bestReview numberOfUnhelpfulReviews] + [restaurant.bestReview numberOfHelpfulReviews]];
     
@@ -90,6 +89,24 @@
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
+    
+    NSLog(@"Average Rating: %f", [restaurant averageCustomerReview]);
+    
+    if ([restaurant averageCustomerReview] >= .5) {
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if ([restaurant averageCustomerReview] >= 1.5) {
+        star2.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if ([restaurant averageCustomerReview] >= 2.5) {
+        star3.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if ([restaurant averageCustomerReview] >= 3.5) {
+        star4.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if ([restaurant averageCustomerReview] >= 4.5) {
+        star5.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
     
 }
 

@@ -14,7 +14,7 @@
 
 -(float) ratio
 {
-    return (numberOfHelpfulReviews / (numberOfHelpfulReviews+numberOfUnhelpfulReviews));
+    return (float)numberOfHelpfulReviews / ((float)numberOfHelpfulReviews+(float)numberOfUnhelpfulReviews);
 }
 
 @end

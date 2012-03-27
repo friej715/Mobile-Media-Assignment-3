@@ -18,13 +18,11 @@
 
 -(void) mostHelpfulReview {
     for (Review* review in [self reviews]) {        
-        if (review.score > 5) { // if it has enough reviews
-            if (review == [reviews objectAtIndex:0]) { // if it's the first one and not nil
+        if (review == [reviews objectAtIndex:0]) { // if it's the first one and not nil
+            bestReview = review;
+        } else { // if it's not the first one
+            if ([bestReview ratio] < [review ratio]) {
                 bestReview = review;
-            } else { // if it's not the first one
-                if ([bestReview ratio] < [review ratio]) {
-                    bestReview = review;
-                }
                 
             }
             

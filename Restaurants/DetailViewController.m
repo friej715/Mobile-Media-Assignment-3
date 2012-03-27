@@ -78,10 +78,11 @@
 //    }
     
     [restaurant mostHelpfulReview];
+
     helpfulReviewLabel.text = [restaurant.bestReview text];
     NSLog(@"Best Review Text: %@", restaurant.bestReview.text);
     
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review -- %i out of %i found this helpful.", [review1 numberOfHelpfulReviews], [review1 numberOfUnhelpfulReviews] + [review1 numberOfHelpfulReviews]];
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review -- %i out of %i found this helpful.", [restaurant.bestReview numberOfHelpfulReviews], [restaurant.bestReview numberOfUnhelpfulReviews] + [restaurant.bestReview numberOfHelpfulReviews]];
     
     
     addressLabel.text = [restaurant address];

@@ -31,7 +31,7 @@
     restaurant.address = @"746 First Avenue\nNew York, NY 10128";
     restaurant.cuisineType = @"Peruvian";
     restaurant.yearOpened = 1995;
-
+    
     Review* review1 = [[Review alloc] init];
     review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
     review1.reviewer = @"The Addams";
@@ -63,24 +63,25 @@
     restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     
     
- //fast enumeration--looks like it figures out how many there are in the first place
+    //fast enumeration--looks like it figures out how many there are in the first place
     for (Review* review in [restaurant reviews]) {
         NSLog(@"Review Text: %@", review.text);
     }
-
     
     
-// older, for-loop way of doing it
-//    NSArray* reviews = [restaurant reviews];
-//    for (int i = 0; i < [reviews count]; i++) {
-//        Review* review = [reviews objectAtIndex:i];
-//        NSLog(@"Review Text: %@", review.text);
-//    }
+    
+    // older, for-loop way of doing it
+    //    NSArray* reviews = [restaurant reviews];
+    //    for (int i = 0; i < [reviews count]; i++) {
+    //        Review* review = [reviews objectAtIndex:i];
+    //        NSLog(@"Review Text: %@", review.text);
+    //    }
     
     [restaurant mostHelpfulReview];
-
+    
     helpfulReviewLabel.text = [restaurant.bestReview text];
     NSLog(@"Best Review Text: %@", restaurant.bestReview.text);
+    NSLog(@"Average Rating: %f", [restaurant averageCustomerReview]);
     
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review -- %i out of %i found this helpful.", [restaurant.bestReview numberOfHelpfulReviews], [restaurant.bestReview numberOfUnhelpfulReviews] + [restaurant.bestReview numberOfHelpfulReviews]];
     

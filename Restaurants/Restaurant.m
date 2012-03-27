@@ -8,12 +8,25 @@
 
 
 @implementation Restaurant
-@synthesize address, name, cuisineType, yearOpened, reviews, bestReview;
+@synthesize address, name, cuisineType, yearOpened, reviews, bestReview, tempTotal;
 
 
 -(int)age
 {
     return 2012 - yearOpened;
+}
+
+-(float) averageCustomerReview {
+    for (Review* review in [self reviews]) {
+        if (review == [reviews objectAtIndex:0]) {
+            tempTotal = [review score];
+        } else {
+            tempTotal += [review score];
+        }
+    }
+    
+    return (float)tempTotal/(float)[reviews count];
+    
 }
 
 -(void) mostHelpfulReview {

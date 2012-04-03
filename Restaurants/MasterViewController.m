@@ -7,7 +7,7 @@
 #import "MasterViewController.h"
 
 @implementation MasterViewController
-
+@synthesize restaurants;
 
 - (void)awakeFromNib
 {
@@ -26,6 +26,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //restaurant array
+    restaurants = [[NSMutableArray alloc] init];
     
     // declare restaurant as a local variable
     Restaurant* piopio = [[Restaurant alloc] init];
@@ -86,6 +89,8 @@
     
     [restaurant mostHelpfulReview];
     
+    [restaurants addObject: piopio];
+    
     
     
     
@@ -125,7 +130,7 @@
 }
 
 -(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [restaurants count];
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

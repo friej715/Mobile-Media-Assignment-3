@@ -24,60 +24,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    restaurant = [[Restaurant alloc] init]; // new restaurant object
     
-    restaurant.name = @"Pio Pio";
-    restaurant.address = @"746 First Avenue\nNew York, NY 10128";
-    restaurant.cuisineType = @"Peruvian";
-    restaurant.yearOpened = 1995;
-    
-    Review* review1 = [[Review alloc] init];
-    review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
-    review1.reviewer = @"The Addams";
-    review1.score = 5;
-    review1.numberOfHelpfulReviews = 19;
-    review1.numberOfUnhelpfulReviews = 8;
-    
-    Review* review2 = [[Review alloc] init];
-    review2.text = @"I DONE POSTED ON DA INTARWEBS!";
-    review2.reviewer = @"Anonymous";
-    review2.score = 1;
-    review2.numberOfHelpfulReviews = 0;
-    review2.numberOfUnhelpfulReviews = 45;
-    
-    Review* review3 = [[Review alloc] init];
-    review3.text = @"Some of the best chicken I've ever eaten. A helpful tip: get some green (Aji) sauce to go, they sell it by the pint!";
-    review3.reviewer = @"Jim Carr";
-    review3.score = 5;
-    review3.numberOfHelpfulReviews = 28;
-    review3.numberOfUnhelpfulReviews = 2;
-    
-    Review* review4 = [[Review alloc] init];
-    review4.text = @"While the food is amazing, they often simply don't pick up the phone when ordering out!";
-    review4.reviewer = @"Paul";
-    review4.score = 4;
-    review4.numberOfHelpfulReviews = 14;
-    review4.numberOfUnhelpfulReviews = 5;
-    
-    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
-    
-    
-    //fast enumeration--looks like it figures out how many there are in the first place
-    for (Review* review in [restaurant reviews]) {
-        NSLog(@"Review Text: %@", review.text);
-    }
-    
-    
-    
-    // older, for-loop way of doing it
-    //    NSArray* reviews = [restaurant reviews];
-    //    for (int i = 0; i < [reviews count]; i++) {
-    //        Review* review = [reviews objectAtIndex:i];
-    //        NSLog(@"Review Text: %@", review.text);
-    //    }
-    
-    [restaurant mostHelpfulReview];
     
     helpfulReviewLabel.text = [restaurant.bestReview text];
     NSLog(@"Best Review Text: %@", restaurant.bestReview.text);

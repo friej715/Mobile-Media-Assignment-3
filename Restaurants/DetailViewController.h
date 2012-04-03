@@ -25,4 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *star4;
 @property (weak, nonatomic) IBOutlet UIImageView *star5;
 
+@property(readwrite, strong) Restaurant* restaurant;
+
 @end

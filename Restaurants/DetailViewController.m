@@ -19,12 +19,13 @@
 @synthesize star3;
 @synthesize star4;
 @synthesize star5;
+@synthesize restaurant;
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
-    
+    [restaurant mostHelpfulReview];
     
     helpfulReviewLabel.text = [restaurant.bestReview text];
     NSLog(@"Best Review Text: %@", restaurant.bestReview.text);

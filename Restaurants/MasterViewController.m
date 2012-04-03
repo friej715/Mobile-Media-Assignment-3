@@ -32,10 +32,11 @@
     
     // declare restaurant as a local variable
     Restaurant* piopio = [[Restaurant alloc] init];
+    Restaurant* henry = [[Restaurant alloc] init];
     
     // stuff from detail view controller
     [super viewDidLoad];
-    Restaurant* restaurant = [[Restaurant alloc] init]; // new restaurant object
+//    Restaurant* restaurant = [[Restaurant alloc] init]; // new restaurant object
     
     piopio.name = @"Pio Pio";
     piopio.address = @"746 First Avenue\nNew York, NY 10128";
@@ -70,13 +71,37 @@
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
     
-    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
+    piopio.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     
     
-    //fast enumeration--looks like it figures out how many there are in the first place
-    for (Review* review in [restaurant reviews]) {
-        NSLog(@"Review Text: %@", review.text);
-    }
+    // henry public
+    
+    henry.name = @"Henry Public";
+    henry.address = @"Brooklyn, NY";
+    henry.cuisineType = @"American, Old School";
+    henry.yearOpened = 1990;
+    
+    review1 = [[Review alloc] init];
+    review1.text = @"Turkey sandwich is the best thing ever";
+    review1.reviewer = @"JF";
+    review1.score = 5;
+    review1.numberOfHelpfulReviews = 19;
+    review1.numberOfUnhelpfulReviews = 0;
+    
+    review2 = [[Review alloc] init];
+    review2.text = @"HERP DERP";
+    review2.reviewer = @"Anonymous";
+    review2.score = 1;
+    review2.numberOfHelpfulReviews = 0;
+    review2.numberOfUnhelpfulReviews = 55;
+    
+    henry.reviews = [[NSArray alloc] initWithObjects:review1, review2, nil];
+    
+    
+//    //fast enumeration--looks like it figures out how many there are in the first place
+//    for (Review* review in [restaurant reviews]) {
+//        NSLog(@"Review Text: %@", review.text);
+//    }
     
     
     
@@ -87,13 +112,20 @@
     //        NSLog(@"Review Text: %@", review.text);
     //    }
     
-    [restaurant mostHelpfulReview];
-    
     [restaurants addObject: piopio];
+    [restaurants addObject: henry];
     
     
     
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DetailViewController* detailVC = (DetailViewController*) [segue destinationViewController];
+    UITableView* table = [self tableView];
+    NSIndexPath* indexPath = [table indexPathForSelectedRow];
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    detailVC.restaurant = currentRestaurant;
 }
 
 - (void)viewDidUnload
@@ -136,8 +168,9 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString* cellIdentifier = @"RestaurantCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = @"Pio Pio";
-    cell.detailTextLabel.text = @"Peruvian";
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    cell.textLabel.text = currentRestaurant.name;
+    cell.detailTextLabel.text = currentRestaurant.cuisineType;
     return cell;
 }
 

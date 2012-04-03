@@ -91,7 +91,7 @@
     review2 = [[Review alloc] init];
     review2.text = @"HERP DERP";
     review2.reviewer = @"Anonymous";
-    review2.score = 1;
+    review2.score = 5;
     review2.numberOfHelpfulReviews = 0;
     review2.numberOfUnhelpfulReviews = 55;
     

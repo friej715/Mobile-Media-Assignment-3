@@ -24,6 +24,5 @@
 @property(readwrite) int score;
 @property(readwrite) int numberOfHelpfulReviews;
 @property(readwrite) int numberOfUnhelpfulReviews;
-@property(readwrite) float rating;
 
 @end

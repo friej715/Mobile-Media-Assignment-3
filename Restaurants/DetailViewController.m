@@ -6,6 +6,7 @@
 
 #import "DetailViewController.h"
 #import "Review.h"
+#import "ReviewViewController.h"
 
 @implementation DetailViewController
 @synthesize addressLabel;
@@ -101,6 +102,12 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ReviewViewController* reviewVC = (ReviewViewController*)[segue destinationViewController];  
+    reviewVC.restaurant = restaurant;
+}
+
 
 
 @end

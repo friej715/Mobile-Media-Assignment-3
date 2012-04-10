@@ -117,11 +117,11 @@
 				0EE5A6E914BEB491006BB5E1 /* MasterViewController.m */,
 				0EE5A6EB14BEB491006BB5E1 /* DetailViewController.h */,
 				0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */,
+				BB79DFCF1533B3C20088E4B6 /* ReviewViewController.h */,
+				BB79DFD01533B3C20088E4B6 /* ReviewViewController.m */,
 				0E2AFF8414DE3F3600456523 /* Mug.h */,
 				0E2AFF8514DE3F3600456523 /* Mug.m */,
 				0EE5A6DA14BEB490006BB5E1 /* Supporting Files */,
-				BB79DFCF1533B3C20088E4B6 /* ReviewViewController.h */,
-				BB79DFD01533B3C20088E4B6 /* ReviewViewController.m */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";

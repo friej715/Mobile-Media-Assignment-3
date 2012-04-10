@@ -8,8 +8,9 @@
 
 #import "ReviewViewController.h"
 
-
 @implementation ReviewViewController
+
+@synthesize restaurant;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -78,31 +79,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [[restaurant reviews] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ReviewCell";
-    
+ 
+    NSString *CellIdentifier = @"ReviewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    UILabel* reviewTextLabel = (UILabel*) [cell viewWithTag:1];
+    UILabel* reviewHelpfulnessLabel = (UILabel*)[cell viewWithTag:2];
     
-    // Configure the cell...
-    cell.textLabel.text = @"test";
+    
+    Review* reviewForIndexAtPath = [restaurant.reviews objectAtIndex:indexPath.row];
+    reviewTextLabel.text = reviewForIndexAtPath.text;
+    reviewHelpfulnessLabel.text = [NSString stringWithFormat:@"%i of %i found this review helpful", reviewForIndexAtPath.numberOfHelpfulReviews, reviewForIndexAtPath.numberOfHelpfulReviews + reviewForIndexAtPath.numberOfUnhelpfulReviews];
     
     return cell;
+    
+    [restaurant mostHelpfulReview];
 }
 
 /*

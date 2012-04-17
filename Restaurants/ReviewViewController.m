@@ -105,6 +105,8 @@
     return cell;
     
     [restaurant mostHelpfulReview];
+    
+    UILabel* mostHelpfulReviewTextLabel = [(UILabel*) cell viewWithTag:3];
 }
 
 /*

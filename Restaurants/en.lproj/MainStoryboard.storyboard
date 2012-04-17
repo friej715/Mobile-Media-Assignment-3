@@ -168,11 +168,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Restaurant Name" id="26"/>
+                    <navigationItem key="navigationItem" title="Restaurant Name" id="26">
+                        <barButtonItem key="rightBarButtonItem" image="heart.png" id="y1F-Bw-6Au">
+                            <connections>
+                                <action selector="markAsFavorite:" destination="21" id="uAx-0Z-mNB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="27" id="p4K-yi-X5k"/>
                         <outlet property="ageLabel" destination="tVm-OC-esT" id="At5-Wf-HEU"/>
                         <outlet property="cuisineLabel" destination="PbC-R4-mhe" id="z7Z-7w-5Ot"/>
+                        <outlet property="favoriteButton" destination="y1F-Bw-6Au" id="eVj-85-Q4n"/>
                         <outlet property="helpfulReviewLabel" destination="XbE-dt-chC" id="nuk-E2-dgh"/>
                         <outlet property="helpfulReviewPercentageLabel" destination="VI3-18-5XF" id="tC8-cn-iml"/>
                         <outlet property="navigationHeader" destination="26" id="Uoz-i7-5tg"/>
@@ -209,7 +216,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Most helpful review  —  14 of 15 found this helpful" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UQe-wd-6Sc">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Most helpful review  —  14 of 15 found this helpful" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UQe-wd-6Sc">
                                             <rect key="frame" x="20" y="23" width="280" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
@@ -217,15 +224,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="RGu-sj-wS1">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -243,31 +241,8 @@
     </scenes>
     <resources>
         <image name="Star_OFF.png" width="37" height="37"/>
+        <image name="heart.png" width="24" height="21"/>
     </resources>
-    <classes>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cuisineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="helpfulReviewLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="helpfulReviewPercentageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navigationHeader" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="star1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="star2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="star3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="star4" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="star5" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="ReviewViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReviewViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

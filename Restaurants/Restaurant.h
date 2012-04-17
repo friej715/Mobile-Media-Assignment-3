@@ -15,6 +15,7 @@
     int tempTotal;
     NSArray* reviews;
     Review* bestReview;
+    bool isFavorite;
     
 }
 @property(readwrite, strong) NSString* address;
@@ -24,6 +25,7 @@
 @property(readwrite) int tempTotal;
 @property(readwrite, strong) NSArray* reviews;
 @property(readwrite, strong) Review* bestReview;
+@property(readwrite) bool isFavorite;
 
 -(void) mostHelpfulReview;
 

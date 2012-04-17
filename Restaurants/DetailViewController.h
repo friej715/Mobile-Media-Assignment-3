@@ -6,6 +6,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Restaurant.h"
+#import "Review.h"
 
 @interface DetailViewController : UIViewController
 {
@@ -26,5 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *star5;
 
 @property(readwrite, strong) Restaurant* restaurant;
+- (IBAction)markAsFavorite:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *favoriteButton;
+
 
 @end

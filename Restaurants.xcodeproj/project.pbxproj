@@ -22,6 +22,8 @@
 		0EE5A6ED14BEB491006BB5E1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */; };
 		BB06EB6514FC6560003044BA /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = BB06EB6414FC6560003044BA /* Review.m */; };
 		BB79DFD11533B3C20088E4B6 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79DFD01533B3C20088E4B6 /* ReviewViewController.m */; };
+		BBF7E407153CE46D00B2034F /* heart-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7E405153CE46D00B2034F /* heart-selected.png */; };
+		BBF7E408153CE46D00B2034F /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF7E406153CE46D00B2034F /* heart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		BB06EB6414FC6560003044BA /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
 		BB79DFCF1533B3C20088E4B6 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
 		BB79DFD01533B3C20088E4B6 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
+		BBF7E405153CE46D00B2034F /* heart-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-selected.png"; sourceTree = "<group>"; };
+		BBF7E406153CE46D00B2034F /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		0EE5A6C414BEB490006BB5E1 = {
 			isa = PBXGroup;
 			children = (
+				BBF7E405153CE46D00B2034F /* heart-selected.png */,
+				BBF7E406153CE46D00B2034F /* heart.png */,
 				0EE5A6D914BEB490006BB5E1 /* Restaurants */,
 				0EE5A6D214BEB490006BB5E1 /* Frameworks */,
 				0EE5A6D014BEB490006BB5E1 /* Products */,
@@ -191,6 +197,8 @@
 				0EE5A6E714BEB491006BB5E1 /* MainStoryboard.storyboard in Resources */,
 				0E6F215614F9FE0F004F682D /* Star_OFF.png in Resources */,
 				0E6F215714F9FE0F004F682D /* Star_ON.png in Resources */,
+				BBF7E407153CE46D00B2034F /* heart-selected.png in Resources */,
+				BBF7E408153CE46D00B2034F /* heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
